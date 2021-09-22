@@ -1,0 +1,16 @@
+{
+  "scenarioName": "GIVEN- Getting price for an empty, WHEN- I invoke GET, THEN- I will receive the 400 status with error message",
+  "steps": [
+    {
+      "name": "Attempt to get price for an empty product code",
+      "url": "/price/",
+      "method": "GET",
+      "request": {
+
+      },
+      "verify": {
+        "status": 404
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "scenarioName": "GIVEN- User requests price for item B, WHEN- I invoke GET, THEN- I will receive the 200 status with body",
+  "steps": [
+    {
+      "name": "Get unit and volume pricing for item B",
+      "url": "/price/B",
+      "method": "GET",
+      "request": {
+
+      },
+      "verify": {
+        "status": 200,
+        "body" : {
+          "unitPrice": 4.25,
+          "volumePrice": 0.0,
+          "volumeQty": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info:
+  title: Checkout API
+  description: API to calculate total cost of all items at the checkout counter
+  version: 0.0.1
+
+paths:
+  /calculatetotal:
+    post:
+      summary: Returns total cost of all items in checkout counter.
+      parameters:
+      - name: Id
+        in: header
+        required: true
+        schema: 
+          type: string
+      requestBody:
+        description: Request body containing product items to calculate totals for
+        required: true
+        content:
+          'application/json':
+            schema: 
+              $ref: "#/components/schemas/CheckoutRequest"
+      responses:
+        '200':    # status code
+          description: Calculation was successful
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/CheckoutSuccessful"
+        '400':
+          description: Request is invalid or poorly formatted
+          content:
+            'application/json':
+               schema:
+                 $ref: "#/components/schemas/CheckoutFailure"
+        '500':
+          description: Unforseen error occured
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/Error"
+  /price/{productCode}:
+    get:
+      summary: returns the price for a specified product code
+      responses:
+        '200':
+          description: Return unit and volume price for product code
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/ProductPrice"
+        '400':
+          description: Invalid product code
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    CheckoutRequest:
+      type: object
+      properties:
+        products:
+          type: array
+          items: 
+            title: Product Code
+            type: string
+      required:
+      - products
+      example:
+        products:
+        - "A"
+        - "B"
+        - "C"
+        - "D"
+    CheckoutSuccessful:
+      type: object
+      properties:
+        Id:
+          type: string
+        total:
+          type: number
+    CheckoutFailure:
+      type: object
+      properties:
+        Id:
+          type: string
+        message:
+          type: string
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+    ProductPrice:
+      type: object
+      properties:
+        unitPrice:
+          type: number
+        volumePrice:
+          type: number
+        volumeQty:
+          type: number
+
+      
+    

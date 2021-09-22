@@ -1,0 +1,19 @@
+{
+  "scenarioName": "GIVEN- Price is request for non-existent item, WHEN- I invoke GET, THEN- I will receive the 400 status with error message",
+  "steps": [
+    {
+      "name": "Attempt to get price for an invalid product code",
+      "url": "/price/X",
+      "method": "GET",
+      "request": {
+
+      },
+      "verify": {
+        "status": 400,
+        "body" : {
+          "message" : "Invalid product code. Acceptable products are [A, B, C, D]"
+        }
+      }
+    }
+  ]
+}
