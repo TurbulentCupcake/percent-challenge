@@ -46,7 +46,7 @@ For simplicity purposes, this application doesn't use the swagger code generatio
 
 ###Assumptions
 1. A request body without any product codes will return a 400 BAD REQUEST
-2. The user can calculate the price for up to 100 items only for a single request to serve as a form of rate limiting
+2. The user can calculate the price for up to 100 items per request, to serve as a form of rate limiting
 3. The app will accept product codes in lower case
 
 ###Notes
