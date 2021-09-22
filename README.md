@@ -1,20 +1,20 @@
 
-#CheckoutService
+# CheckoutService
 
-This project is submitted in satisfaction of the Percent Java Coding Test. 
+This application exposes API's to enable the user to calculate totals for a list of products and obtain prices for a specific product.
 
-###Requirements:
+### Requirements:
 1. OpenJDK Java 11 GA (build 11+28)
 2. apache-maven-3.8.2
 
-###Setup Instructions
+### Setup Instructions
 1. Navigate to the `checkoutservice` project
 2. Run `mvn clean install -DskipTests` to install dependencies
 3. Run `mvn surefire:test` to run all unit tests
 4. Run `mvn failsafe:integration-test` to run all integration tests
 5. Run `java -jar .\target\checkoutservice-0.0.1-SNAPSHOT.jar` to start the application
 
-###Usage
+### Usage
 
 The application exposes two endpoints: 
 1. `/calculatetotal` - POST - Returns the total for a list of product codes
@@ -44,12 +44,12 @@ exposed by this application.
 
 For simplicity purposes, this application doesn't use the swagger code generation tool to generate API models and thereby creating dependencies
 
-###Assumptions
+### Assumptions
 1. A request body without any product codes will return a 400 BAD REQUEST
 2. The user can calculate the price for up to 100 items per request, to serve as a form of rate limiting
 3. The app will accept product codes in lower case
 
-###Notes
+### Notes
 1. Product prices are defined statically in the `application.yml`
 2. This application uses [Zerocode](https://github.com/authorjapps/zerocode) for the purposes of integration testing.
 Zerocode allows developers to define .json files that represent test requests that are sent to the application and
