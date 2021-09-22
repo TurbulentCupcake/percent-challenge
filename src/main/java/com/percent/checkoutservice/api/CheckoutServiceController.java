@@ -60,11 +60,11 @@ public class CheckoutServiceController {
     @GetMapping("/price/{productCode}")
     public ResponseEntity getProductPrice(@PathVariable String productCode) {
 
-        if(!validationService.validateProductCode(productCode)) {
+        if(!validationService.validateProductCode(productCode.toUpperCase())) {
             return new ResponseEntity(new Error("Invalid product code. Acceptable products are [A, B, C, D]"), HttpStatus.BAD_REQUEST);
         }
 
-        ProductCode pCode = productPriceInfo.getProducts().get(productCode);
+        ProductCode pCode = productPriceInfo.getProducts().get(productCode.toUpperCase());
 
         return new ResponseEntity(
                 new ProductPrice(
