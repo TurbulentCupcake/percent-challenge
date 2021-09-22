@@ -1,7 +1,7 @@
 
 # CheckoutService
 
-This project is submitted in satisfaction of the Percent Java Coding Test. 
+This application exposes API's to enable the user to calculate totals for a list of products and obtain prices for a specific product.
 
 ### Requirements:
 1. OpenJDK Java 11 GA (build 11+28)
