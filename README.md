@@ -50,7 +50,8 @@ For simplicity purposes, this application doesn't use the swagger code generatio
 3. The app will accept product codes in lower case
 
 ###Notes
-1. This application uses [Zerocode](https://github.com/authorjapps/zerocode) for the purposes of integration testing.
+1. Product prices are defined statically in the `application.yml`
+2. This application uses [Zerocode](https://github.com/authorjapps/zerocode) for the purposes of integration testing.
 Zerocode allows developers to define .json files that represent test requests that are sent to the application and
 enables verification of the subsequent response. These .json files can be viewed under `src/test/resources/integration_tests`. 
 Each of them
@@ -62,7 +63,7 @@ This definition is triggered through `com.percent.checkoutservice.integrationtes
 To run an integration test individually, the method corresponding to the test definition must be triggered, as defined previously
 . All integration tests are run through the `com.percent.checkoutservice.integrationtests.IntegrationTestSuiteIT` and
 can be triggered through Step 4 under Steps.
-2. `post_example1.json`, `post_example2.json` and `post_example3.json` represent the three test cases defined 
+3. `post_example1.json`, `post_example2.json` and `post_example3.json` represent the three test cases defined 
 in the problem definition that are expected to work. As mentioned previously, their corresponding trigger methods
 are present in `com.percent.checkoutservice.integrationtests.post.VerifyExamples`
 
