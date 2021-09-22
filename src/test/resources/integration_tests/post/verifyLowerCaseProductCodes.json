@@ -1,0 +1,34 @@
+{
+  "scenarioName": "GIVEN- Product codes in lowercase, WHEN- I invoke POST, THEN- I will receive the 200 status with total",
+  "steps": [
+    {
+      "name": "Lowercase Product Codes Test",
+      "url": "/calculatetotal",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "Id" : "${RANDOM.UUID}"
+        },
+        "body": {
+          "products":
+          [
+            "a",
+            "b",
+            "c",
+            "d",
+            "a",
+            "b",
+            "a"
+          ]
+        }
+
+      },
+      "verify": {
+        "status": 200,
+        "body": {
+          "total": 13.25
+        }
+      }
+    }
+  ]
+}

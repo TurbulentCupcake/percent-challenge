@@ -1,0 +1,36 @@
+{
+  "scenarioName": "GIVEN- Only items with volume pricing , WHEN- I invoke POST, THEN- I will receive the 200 status with total",
+  "steps": [
+    {
+      "name": "Test items with only volume pricing",
+      "url": "/calculatetotal",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "Id" : "${RANDOM.UUID}"
+        },
+        "body": {
+          "products":
+          [
+            "A",
+            "A",
+            "A",
+            "C",
+            "C",
+            "C",
+            "C",
+            "C",
+            "C"
+          ]
+        }
+
+      },
+      "verify": {
+        "status": 200,
+        "body": {
+          "total": 8.0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "scenarioName": "GIVEN- Invalid product code in products list, WHEN- I invoke POST, THEN- I will receive 400 status with error message",
+  "steps": [
+    {
+      "name": "Invalid Product Codes Test",
+      "url": "/calculatetotal",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "Id" : "${RANDOM.UUID}"
+        },
+        "body": {
+          "products":
+          [
+            "A",
+            "B",
+            "C",
+            "D",
+            "A",
+            "B",
+            "X"
+          ]
+        }
+
+      },
+      "verify": {
+        "status": 400,
+        "body" : {
+          "message" : "Invalid products in product list. Acceptable products are [A, B, C, D]"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "scenarioName": "GIVEN- A request with missing header, WHEN- I invoke POST, THEN- I will receive 400 status with error message",
+  "steps": [
+    {
+      "name": "Request without header",
+      "url": "/calculatetotal",
+      "method": "POST",
+      "request": {
+        "body": {
+          "products":
+          [
+            "A",
+            "B",
+            "C",
+            "D",
+            "A",
+            "B",
+            "A"
+          ]
+        }
+
+      },
+      "verify": {
+        "status": 400,
+        "body" : {
+          "message": "Required request header 'Id' for method parameter type String is not present"
+        }
+      }
+    }
+  ]
+}

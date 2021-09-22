@@ -1,0 +1,31 @@
+{
+  "scenarioName": "GIVEN- Example 3, WHEN- I invoke POST, THEN- I will receive the 200 status with total",
+  "steps": [
+    {
+      "name": "Percent java challenge example 2",
+      "url": "/calculatetotal",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "Id" : "${RANDOM.UUID}"
+        },
+        "body": {
+          "products":
+          [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+
+      },
+      "verify": {
+        "status": 200,
+        "body": {
+          "total": 7.25
+        }
+      }
+    }
+  ]
+}

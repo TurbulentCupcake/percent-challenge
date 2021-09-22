@@ -1,0 +1,26 @@
+{
+  "scenarioName": "GIVEN- Empty product list, WHEN- I invoke POST, THEN- I will receive the 400 status with error message",
+  "steps": [
+    {
+      "name": "Empty product list",
+      "url": "/calculatetotal",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "Id" : "${RANDOM.UUID}"
+        },
+        "body": {
+          "products":
+          []
+        }
+
+      },
+      "verify": {
+        "status": 400,
+        "body": {
+          "message" : "Product list provided is empty"
+        }
+      }
+    }
+  ]
+}

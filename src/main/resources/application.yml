@@ -1,0 +1,31 @@
+
+server:
+  port: 8080
+
+# Stores static prices of each product
+productpriceinfo:
+  products:
+    A:
+      unitPrice: 1.25
+      volumePrice:
+        isVolumePricingAvailable: true
+        price: 3.00
+        qty: 3
+    B:
+      unitPrice: 4.25
+      volumePrice:
+        isVolumePricingAvailable: false
+        price: 0.00
+        qty: 0
+    C:
+      unitPrice: 1.00
+      volumePrice:
+        isVolumePricingAvailable: true
+        price: 5.00
+        qty: 6
+    D:
+      unitPrice: 0.75
+      volumePrice:
+        isVolumePricingAvailable: false
+        price: 0.00
+        qty: 0
