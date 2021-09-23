@@ -12,7 +12,7 @@ This application exposes API's to enable the user to calculate totals for a list
 2. Run `mvn clean install -DskipTests` to install dependencies
 3. Run `mvn surefire:test` to run all unit tests
 4. Run `mvn failsafe:integration-test` to run all integration tests
-5. Run `java -jar .\target\checkoutservice-0.0.1-SNAPSHOT.jar` to start the application
+5. Run `java -jar .\target\checkoutservice-0.0.1-SNAPSHOT.jar` or `mvn spring-boot:run` to start the application
 
 ### Usage
 
